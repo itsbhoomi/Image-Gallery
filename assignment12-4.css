@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flex {
+    width: 70%;
+    margin: 1rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    width: 28%;
+    height: 200px;
+    margin: 0.75rem 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s;
+}
+
+.box:hover img {
+    transform: scale(1.7);
+}
+
+.box::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: all 0.5s;
+}
+
+.box:hover::before {
+    left: 5%;
+    top: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+.background i {
+    color: #fff;
+    font-size: 30px;
+    padding: 5px;
+}
+
+.background {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+    z-index: 2;
+    opacity: 1;
+    overflow: hidden;
+}
+
+.box:hover .background {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+}
+
+.background a {
+    transition: all 0.2s;
+}
+
+.background a:hover {
+    transform: rotate(360deg) scale(1.4);
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.4);
+}
